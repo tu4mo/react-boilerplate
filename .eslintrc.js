@@ -20,7 +20,4 @@ module.exports = {
     'react/sort-prop-types': 'error',
     'sort-keys': ['error', 'asc', { caseSensitive: true, natural: false }],
   },
-  settings: {
-    'import/resolver': 'webpack',
-  },
 }
