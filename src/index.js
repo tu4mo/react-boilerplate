@@ -8,14 +8,17 @@ import { IntlProvider } from 'react-intl'
 
 import store from './store'
 import en from './locale/en'
-import theme from './theme'
+import { GlobalStyle, theme } from './theme'
 import App from './App'
 
 const Index = () => (
   <Provider store={store}>
     <IntlProvider locale="en" messages={en}>
       <ThemeProvider theme={theme}>
-        <App />
+        <>
+          <App />
+          <GlobalStyle />
+        </>
       </ThemeProvider>
     </IntlProvider>
   </Provider>
