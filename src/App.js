@@ -1,23 +1,22 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
-import { hot } from 'react-hot-loader'
 
-import LoadableComponent from './components/LoadableComponent'
-
-const Home = LoadableComponent(() => import('./views/Home'))
-const Page = LoadableComponent(() => import('./views/Page'))
+const Home = lazy(() => import('./views/Home'))
+const Page = lazy(() => import('./views/Page'))
 
 const App = () => (
-  <BrowserRouter>
-    <div>
-      <Link to="/">Home</Link>
-      <Link to="/page">Page</Link>
-      <Switch>
-        <Route component={Home} exact path="/" />
-        <Route component={Page} exact path="/page" />
-      </Switch>
-    </div>
-  </BrowserRouter>
+  <Suspense fallback={<div>Loading…</div>}>
+    <BrowserRouter>
+      <div>
+        <Link to="/">Home</Link>
+        <Link to="/page">Page</Link>
+        <Switch>
+          <Route component={Home} exact path="/" />
+          <Route component={Page} exact path="/page" />
+        </Switch>
+      </div>
+    </BrowserRouter>
+  </Suspense>
 )
 
-export default hot(module)(App)
+export default App

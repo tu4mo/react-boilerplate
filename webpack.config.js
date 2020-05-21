@@ -1,9 +1,10 @@
 const isDev = process.env.NODE_ENV !== 'production'
 
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
@@ -14,22 +15,23 @@ module.exports = {
       {
         exclude: /node_modules/,
         loader: 'babel-loader',
-        test: /\.js$/,
+        test: /\.js$/
       },
       {
         loader: 'file-loader',
-        test: /\.(jpg|png|svg)$/,
-      },
-    ],
+        test: /\.(jpg|png|svg)$/
+      }
+    ]
   },
   plugins: [
-    new CleanWebpackPlugin('dist'),
+    isDev && new ReactRefreshWebpackPlugin(),
+    new CleanWebpackPlugin(),
     new CopyWebpackPlugin([{ from: 'src/assets' }]),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       inject: 'body',
-      template: path.join(__dirname, '/src/index.html'),
+      template: path.join(__dirname, '/src/index.html')
     }),
-    new webpack.ContextReplacementPlugin(/moment[\\/]locale$/, /^\.\/(en)$/),
-  ],
+    new webpack.ContextReplacementPlugin(/moment[\\/]locale$/, /^\.\/(en)$/)
+  ].filter(Boolean)
 }

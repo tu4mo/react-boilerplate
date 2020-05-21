@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    jest: true,
+    jest: true
   },
   extends: [
     'standard',
@@ -10,7 +10,7 @@ module.exports = {
     'prettier/react',
     'prettier/standard',
     'plugin:jsx-a11y/recommended',
-    'plugin:testcafe/recommended',
+    'plugin:testcafe/recommended'
   ],
   parser: 'babel-eslint',
   plugins: ['jsx-a11y', 'testcafe'],
@@ -18,6 +18,6 @@ module.exports = {
     'react/jsx-sort-props': 'error',
     'react/sort-comp': 'error',
     'react/sort-prop-types': 'error',
-    'sort-keys': ['error', 'asc', { caseSensitive: true, natural: false }],
-  },
+    'sort-keys': ['error', 'asc', { caseSensitive: true, natural: false }]
+  }
 }

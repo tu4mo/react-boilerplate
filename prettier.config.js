@@ -1,12 +1,14 @@
 module.exports = {
   arrowParens: 'avoid',
   bracketSpacing: true,
+  endOfLine: 'lf',
   jsxBracketSameLine: false,
-  parser: 'babylon',
+  jsxSingleQuote: false,
   printWidth: 80,
+  quoteProps: 'consistent',
   semi: false,
   singleQuote: true,
   tabWidth: 2,
-  trailingComma: 'es5',
-  useTabs: false,
+  trailingComma: 'none',
+  useTabs: false
 }
