@@ -4,23 +4,20 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import { IntlProvider } from 'react-intl'
 
 import store from './store'
-import en from './locale/en'
 import { GlobalStyle, theme } from './theme'
 import App from './App'
+import './i18n'
 
 const Index = () => (
   <Provider store={store}>
-    <IntlProvider locale="en" messages={en}>
-      <ThemeProvider theme={theme}>
-        <>
-          <App />
-          <GlobalStyle />
-        </>
-      </ThemeProvider>
-    </IntlProvider>
+    <ThemeProvider theme={theme}>
+      <>
+        <App />
+        <GlobalStyle />
+      </>
+    </ThemeProvider>
   </Provider>
 )
 

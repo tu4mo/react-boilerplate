@@ -15,10 +15,11 @@
   "private": true,
   "dependencies": {
     "@babel/polyfill": "^7.10.4",
+    "i18next": "^19.6.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
-    "react-intl": "^2.9.0",
+    "react-i18next": "^11.7.0",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",

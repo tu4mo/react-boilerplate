@@ -8,12 +8,13 @@ const App = () => (
   <Suspense fallback={<div>Loading…</div>}>
     <BrowserRouter>
       <div>
-        <Link to="/">Home</Link>
-        <Link to="/page">Page</Link>
-        <Switch>
-          <Route component={Home} exact path="/" />
-          <Route component={Page} exact path="/page" />
-        </Switch>
+        <Link to="/">Home</Link>, <Link to="/page">Page</Link>
+        <div>
+          <Switch>
+            <Route component={Home} exact path="/" />
+            <Route component={Page} exact path="/page" />
+          </Switch>
+        </div>
       </div>
     </BrowserRouter>
   </Suspense>
