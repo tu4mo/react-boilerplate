@@ -26,7 +26,7 @@ module.exports = {
   plugins: [
     isDev && new ReactRefreshWebpackPlugin(),
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([{ from: 'src/assets' }]),
+    new CopyWebpackPlugin({ patterns: [{ from: 'src/assets' }] }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       inject: 'body',
