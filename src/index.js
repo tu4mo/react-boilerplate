@@ -1,6 +1,6 @@
 import '@babel/polyfill'
 
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 
@@ -12,12 +12,10 @@ import './i18n'
 const Index = () => (
   <Provider store={store}>
     <ThemeProvider theme={theme}>
-      <>
-        <App />
-        <GlobalStyle />
-      </>
+      <GlobalStyle />
+      <App />
     </ThemeProvider>
   </Provider>
 )
 
-ReactDOM.render(<Index />, document.getElementById('root'))
+render(<Index />, document.getElementById('root'))
