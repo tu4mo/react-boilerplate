@@ -7,11 +7,9 @@ module.exports = {
     'standard',
     'standard-jsx',
     'standard-react',
-    'prettier',
-    'prettier/react',
-    'prettier/standard',
     'plugin:jsx-a11y/recommended',
-    'plugin:testcafe/recommended'
+    'plugin:testcafe/recommended',
+    'plugin:prettier/recommended'
   ],
   parser: 'babel-eslint',
   plugins: ['jsx-a11y', 'testcafe'],
