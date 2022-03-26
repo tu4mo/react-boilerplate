@@ -18,7 +18,7 @@ module.exports = {
       {
         exclude: /node_modules/,
         loader: 'babel-loader',
-        test: /\.js$/
+        test: /\.(js|ts|tsx)$/
       },
       {
         loader: 'file-loader',
@@ -36,5 +36,8 @@ module.exports = {
       template: path.join(__dirname, '/src/index.html')
     }),
     new webpack.ContextReplacementPlugin(/moment[\\/]locale$/, /^\.\/(en)$/)
-  ].filter(Boolean)
+  ].filter(Boolean),
+  resolve: {
+    extensions: ['.js', '.ts', '.tsx']
+  }
 }

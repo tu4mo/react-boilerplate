@@ -4,13 +4,9 @@ module.exports = api => {
   return {
     plugins: [!api.env('production') && 'react-refresh/babel'].filter(Boolean),
     presets: [
-      ['@babel/preset-env', { modules: false }],
-      [
-        '@babel/preset-react',
-        {
-          runtime: 'automatic'
-        }
-      ]
+      ['@babel/preset-env'],
+      ['@babel/preset-react', { runtime: 'automatic' }],
+      ['@babel/preset-typescript']
     ]
   }
 }
