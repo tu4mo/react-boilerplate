@@ -1,1 +1,1 @@
-# My React Boilerplate
+# My (outdated) React Boilerplate
